@@ -12,27 +12,13 @@
     }
     .flyer { 
       background:rgba(0,0,0,.75); padding:40px; border-radius:20px; border:4px solid #fff; 
-      text-align:center; color:#fff; box-shadow:0 0 40px rgba(0,0,0,.9); max-width:650px; 
+      text-align:center; color:#fff; box-shadow:0 0 40px rgba(0,0,0,.9); max-width:700px; 
     }
 
-    /* Bloody title style */
-    .blood-title {
-      font-size:3.5rem; margin-bottom:15px; text-transform:uppercase; letter-spacing:3px;
-      background: linear-gradient(to bottom, #b30000, #600000);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 2px 2px 8px #000, 0 0 15px #b30000;
-      position:relative;
-      display:inline-block;
-    }
-    .blood-title::after {
-      content:"";
-      position:absolute;
-      bottom:-8px; left:0; right:0;
-      height:8px;
-      background:radial-gradient(circle, #ff0000 40%, transparent 70%) repeat-x;
-      background-size:20px 20px;
-      animation:drip 1.5s infinite linear;
+    h1 { 
+      font-size:3.5rem; margin-bottom:15px; text-transform:uppercase; letter-spacing:3px; 
+      color:#ff1c1c; /* Blood red */
+      text-shadow:2px 2px 8px #000, 0 0 15px #b30000, -2px -2px 8px #400; 
     }
 
     h2 { 
@@ -40,59 +26,54 @@
       text-shadow:1px 1px 5px #000; 
     }
 
+    .button-row {
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      margin-top:20px;
+    }
+
+    .button, .red-button {
+      flex:1;
+      max-width:200px; /* keeps them equal width */
+      min-width:200px;
+      text-align:center;
+      padding:15px 0;
+      font-size:1.2rem;
+      font-weight:700;
+      border-radius:10px;
+      text-decoration:none;
+      transition:.3s;
+    }
+
     .button {
-      display:inline-block; margin:10px; padding:15px 35px; background:#5865F2; 
-      color:#fff; font-size:1.3rem; font-weight:700; border-radius:10px; 
-      text-decoration:none; transition:.3s; box-shadow:0 0 15px rgba(0,0,0,.7);
+      background:#5865F2; color:#fff; box-shadow:0 0 15px rgba(0,0,0,.7);
     }
     .button:hover { 
-      background:#4752C4; transform:scale(1.08); box-shadow:0 0 25px #5865F2; 
+      background:#4752C4; transform:scale(1.05); box-shadow:0 0 25px #5865F2; 
     }
 
-    /* Bloody button style */
-    .blood-button {
-      display:inline-block; margin:10px; padding:15px 35px;
-      background: linear-gradient(to bottom, #b30000, #600000);
-      color:#fff; font-size:1.3rem; font-weight:900; border-radius:10px;
-      text-decoration:none; text-transform:uppercase;
-      text-shadow: 2px 2px 5px #000, 0 0 10px #ff0000;
-      position:relative;
-      overflow:hidden;
-      box-shadow:0 0 20px rgba(255,0,0,0.7);
+    .red-button {
+      background:#b30000; color:#fff; text-transform:uppercase;
+      box-shadow:0 0 20px rgba(255,0,0,0.6);
     }
-    .blood-button::after {
-      content:"";
-      position:absolute;
-      bottom:0; left:0; right:0;
-      height:6px;
-      background:radial-gradient(circle, #ff0000 40%, transparent 70%) repeat-x;
-      background-size:20px 20px;
-      animation:drip 1.5s infinite linear;
-    }
-    .blood-button:hover {
-      background: linear-gradient(to bottom, #ff1c1c, #400000);
-      transform:scale(1.08);
-      box-shadow:0 0 30px #ff0000;
-    }
-
-    @keyframes drip {
-      from { background-position:0 0; }
-      to { background-position:20px 0; }
+    .red-button:hover {
+      background:#800000;
+      transform:scale(1.05);
+      box-shadow:0 0 30px #ff1c1c;
     }
   </style>
 </head>
 <body>
   <div class="flyer">
-    <!-- Title with blood effect -->
-    <h1 class="blood-title">Wascally Wabbits</h1>
+    <h1>Wascally Wabbits</h1>
     <h2>SCUM Server Community</h2>
-    <!-- Discord button -->
-    <a href="https://discord.gg/NqeZ9YHSt2" class="button" target="_blank" rel="noopener">Join Discord</a>
-    <!-- SCUM Maps button with bloody style -->
-    <a href="https://scum-map.com/en/map/wascally_wabbits" 
-       class="blood-button" target="_blank" rel="noopener">
-       View SCUM Maps
-    </a>
+
+    <!-- Button row -->
+    <div class="button-row">
+      <a href="https://discord.gg/NqeZ9YHSt2" class="button" target="_blank" rel="noopener">Join Discord</a>
+      <a href="https://scum-map.com/en/map/wascally_wabbits" class="red-button" target="_blank" rel="noopener">View SCUM Maps</a>
+    </div>
   </div>
 </body>
 </html>
